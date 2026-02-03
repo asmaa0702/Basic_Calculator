@@ -7,12 +7,12 @@ import 'button.dart';
 class Calc extends StatefulWidget {
   Calc({super.key});
   double? a, b;
-  bool Adot = false;
-  bool Bdot = false;
-  String last = '';
-  String? sign;
   String dis = '0';
   bool disStat = false;
+  bool Adot = false, Bdot = false;
+  String last = '';
+  String? sign;
+
   double x = 0;
   @override
   State<Calc> createState() => _CalcState();
@@ -76,14 +76,6 @@ class _CalcState extends State<Calc> {
                           ),
                           onPress: () {
                             setState(() {
-                              /**double? a, b;
-  bool Adot = false;
-  bool Bdot = false;
-  String last = '';
-  String? sign;
-  String dis = '0';
-  bool disStat = false;
-  double x = 0; */
                               widget.dis = '0';
                               widget.Adot = false;
                               widget.Bdot = false;
@@ -134,9 +126,19 @@ class _CalcState extends State<Calc> {
                           onPress: () {
                             setState(() {
                               if (widget.b == null) {
-                                widget.sign = '/';
-                                widget.a = double.parse(widget.dis);
-                                widget.dis = widget.dis + '/';
+                                if (widget.sign == null) {
+                                  widget.sign = '/';
+                                  widget.a = double.parse(widget.dis);
+                                  widget.dis = widget.dis + '/';
+                                } else {
+                                  widget.dis = widget.dis.substring(
+                                    0,
+                                    widget.dis.length - 1,
+                                  );
+                                  widget.sign = '/';
+                                  widget.a = double.parse(widget.dis);
+                                  widget.dis = widget.dis + '/';
+                                }
                               } else {
                                 if (widget.sign == '/') {
                                   widget.x = div(widget.a!, widget.b!);
@@ -192,7 +194,7 @@ class _CalcState extends State<Calc> {
                           onPress: () {
                             setState(() {
                               if (widget.sign == null) {
-                                if (widget.dis == '0' && !widget.disStat) {
+                                if (widget.dis == '0') {
                                   widget.dis = '7';
                                 } else {
                                   widget.dis = widget.dis + '7';
@@ -518,9 +520,19 @@ class _CalcState extends State<Calc> {
                       onPress: () {
                         setState(() {
                           if (widget.b == null) {
-                            widget.sign = '×';
-                            widget.a = double.parse(widget.dis);
-                            widget.dis = widget.dis + '×';
+                            if (widget.sign == null) {
+                              widget.sign = '×';
+                              widget.a = double.parse(widget.dis);
+                              widget.dis = widget.dis + '×';
+                            } else {
+                              widget.dis = widget.dis.substring(
+                                0,
+                                widget.dis.length - 1,
+                              );
+                              widget.sign = '×';
+                              widget.a = double.parse(widget.dis);
+                              widget.dis = widget.dis + '×';
+                            }
                           } else {
                             if (widget.sign == '/') {
                               widget.x = div(widget.a!, widget.b!);
@@ -563,9 +575,19 @@ class _CalcState extends State<Calc> {
                       onPress: () {
                         setState(() {
                           if (widget.b == null) {
-                            widget.sign = '-';
-                            widget.a = double.parse(widget.dis);
-                            widget.dis = widget.dis + '-';
+                            if (widget.sign == null) {
+                              widget.sign = '-';
+                              widget.a = double.parse(widget.dis);
+                              widget.dis = widget.dis + '-';
+                            } else {
+                              widget.dis = widget.dis.substring(
+                                0,
+                                widget.dis.length - 1,
+                              );
+                              widget.sign = '-';
+                              widget.a = double.parse(widget.dis);
+                              widget.dis = widget.dis + '-';
+                            }
                           } else {
                             if (widget.sign == '/') {
                               widget.x = div(widget.a!, widget.b!);
@@ -609,9 +631,19 @@ class _CalcState extends State<Calc> {
                       onPress: () {
                         setState(() {
                           if (widget.b == null) {
-                            widget.sign = '+';
-                            widget.a = double.parse(widget.dis);
-                            widget.dis = widget.dis + '+';
+                            if (widget.sign == null) {
+                              widget.sign = '+';
+                              widget.a = double.parse(widget.dis);
+                              widget.dis = widget.dis + '+';
+                            } else {
+                              widget.dis = widget.dis.substring(
+                                0,
+                                widget.dis.length - 1,
+                              );
+                              widget.sign = '+';
+                              widget.a = double.parse(widget.dis);
+                              widget.dis = widget.dis + '+';
+                            }
                           } else {
                             if (widget.sign == '/') {
                               widget.x = div(widget.a!, widget.b!);
