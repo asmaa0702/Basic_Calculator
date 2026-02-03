@@ -8,7 +8,7 @@ class Calc extends StatefulWidget {
   Calc({super.key});
   double? a, b;
   String dis = '0';
-  bool disStat = false;
+  // bool disStat = false;
   bool Adot = false, Bdot = false;
   String last = '';
   String? sign;
@@ -79,7 +79,7 @@ class _CalcState extends State<Calc> {
                               widget.dis = '0';
                               widget.Adot = false;
                               widget.Bdot = false;
-                              widget.disStat = false;
+                              // widget.disStat = false;
                               widget.a = null;
                               widget.b = null;
                               widget.last = '';
@@ -159,7 +159,7 @@ class _CalcState extends State<Calc> {
                                 } else {
                                   widget.dis = widget.dis;
                                 }
-                                widget.disStat = true;
+                                // widget.disStat = true;
                                 widget.Adot = false;
                                 widget.Bdot = false;
                                 widget.a = widget.x;
@@ -553,7 +553,7 @@ class _CalcState extends State<Calc> {
                             } else {
                               widget.dis = widget.dis;
                             }
-                            widget.disStat = true;
+                            // widget.disStat = true;
                             widget.Adot = false;
                             widget.Bdot = false;
                             widget.a = widget.x;
@@ -608,7 +608,7 @@ class _CalcState extends State<Calc> {
                             } else {
                               widget.dis = widget.dis;
                             }
-                            widget.disStat = true;
+                            // widget.disStat = true;
                             widget.Adot = false;
                             widget.Bdot = false;
                             widget.a = widget.x;
@@ -664,7 +664,7 @@ class _CalcState extends State<Calc> {
                             } else {
                               widget.dis = widget.dis;
                             }
-                            widget.disStat = true;
+                            // widget.disStat = true;
                             widget.Adot = false;
                             widget.Bdot = false;
                             widget.a = widget.x;
@@ -706,7 +706,7 @@ class _CalcState extends State<Calc> {
                           } else {
                             widget.dis = widget.dis;
                           }
-                          widget.disStat = true;
+                          // widget.disStat = true;
                           widget.Adot = false;
                           widget.Bdot = false;
                           widget.a = widget.x;
