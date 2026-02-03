@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'classes.dart';
-import 'com.dart';
+import 'functions.dart';
+import 'button.dart';
 
 class Calc extends StatefulWidget {
   Calc({super.key});
